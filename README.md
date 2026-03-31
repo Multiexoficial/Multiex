@@ -1,2 +1,2 @@
-# multiex.github.io/
+# multiex.github.io
 Cursos, productos y videos educativos
