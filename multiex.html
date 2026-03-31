@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiEx | Academia de Futuro</title>
+    <script src="https://tailwindcss.com"></script>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .card-hover:hover { transform: translateY(-10px); transition: all 0.3s ease; }
+        .bg-multi { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navegación Moderna -->
+    <nav class="sticky top-0 z-50 glass border-b border-slate-200 py-4 px-6 flex justify-between items-center">
+        <div class="text-2xl font-bold text-blue-900">Multi<span class="text-blue-500">Ex</span></div>
+        <div class="hidden md:flex space-x-8 font-medium">
+            <a href="#cursos" class="hover:text-blue-600 transition">Cursos</a>
+            <a href="#productos" class="hover:text-blue-600 transition">Productos</a>
+            <a href="#maestros" class="hover:text-blue-600 transition">Mentores</a>
+        </div>
+        <button class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200">
+            Iniciar Ahora
+        </button>
+    </nav>
+
+    <!-- Hero Didáctico: El Gancho Visual -->
+    <header class="bg-multi text-white py-24 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <span class="bg-blue-400/30 text-blue-100 px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider">Metodología MultiEx</span>
+                <h1 class="text-5xl md:text-6xl font-bold mt-4 leading-tight">Aprende. Aplica. <br><span class="text-blue-300">Evoluciona.</span></h1>
+                <p class="text-xl mt-6 text-blue-100 leading-relaxed">
+                    Transformamos la educación tradicional en una experiencia dinámica con maestros personales y contenido visual de alto impacto.
+                </p>
+                <div class="mt-10 flex gap-4">
+                    <a href="#explorar" class="bg-white text-blue-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition">Explorar Catálogo</a>
+                    <a href="#" class="flex items-center gap-2 text-white font-medium hover:underline">
+                        <span>▶ Ver Video Demo</span>
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <!-- Representación de Video/Dashboard -->
+                <div class="w-full max-w-md aspect-video bg-slate-900 rounded-3xl border-8 border-slate-800 shadow-2xl overflow-hidden relative">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md animate-pulse">
+                            <div class="w-0 h-0 border-t-[15px] border-t-transparent border-l-[25px] border-l-white border-b-[15px] border-b-transparent ml-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Pilares (Didáctica) -->
+    <section id="explorar" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-slate-900">Tu ruta de aprendizaje en MultiEx</h2>
+            <p class="text-slate-500 mt-4">Diseñado psicológicamente para que nunca dejes de avanzar.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Cursos -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 card-hover">
+                <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6">📚</div>
+                <h3 class="text-xl font-bold mb-3">Cursos Interactivos</h3>
+                <p class="text-slate-600 mb-6 text-sm">Lecciones cortas y prácticas. Olvida la teoría aburrida; aquí vienes a crear desde el día 1.</p>
+                <ul class="text-sm space-y-2 text-slate-500">
+                    <li class="flex items-center gap-2">✅ Acceso de por vida</li>
+                    <li class="flex items-center gap-2">✅ Certificación oficial</li>
+                </ul>
+            </div>
+
+            <!-- Videos Educativos -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 card-hover">
+                <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6">🎬</div>
+                <h3 class="text-xl font-bold mb-3">Contenido Visual</h3>
+                <p class="text-slate-600 mb-6 text-sm">Videos en alta definición con explicaciones gráficas que facilitan la retención de información.</p>
+                <ul class="text-sm space-y-2 text-slate-500">
+                    <li class="flex items-center gap-2">✅ Micro-learning (5-10 min)</li>
+                    <li class="flex items-center gap-2">✅ Recursos descargables</li>
+                </ul>
+            </div>
+
+            <!-- Maestros Personales -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 card-hover">
+                <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-6">👤</div>
+                <h3 class="text-xl font-bold mb-3">Mentores de Élite</h3>
+                <p class="text-slate-600 mb-6 text-sm">No estás solo. Nuestros maestros personales te guían en sesiones 1 a 1 para resolver tus dudas.</p>
+                <ul class="text-sm space-y-2 text-slate-500">
+                    <li class="flex items-center gap-2">✅ Feedback en tiempo real</li>
+                    <li class="flex items-center gap-2">✅ Networking exclusivo</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Afiliados / Productos (Psicología de Comunidad) -->
+    <section class="bg-slate-900 py-20 px-6 text-white overflow-hidden">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Crece con nuestro ecosistema de Afiliados</h2>
+                <p class="text-slate-400 text-lg mb-8 italic">"El conocimiento se multiplica cuando se comparte."</p>
+                <div class="space-y-4">
+                    <div class="flex gap-4 items-start">
+                        <span class="text-blue-400 font-bold text-2xl">01.</span>
+                        <p><strong>Gana:</strong> Comisiones por cada referido en nuestros productos estrella.</p>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="text-blue-400 font-bold text-2xl">02.</span>
+                        <p><strong>Aprende:</strong> Acceso a talleres exclusivos sobre marketing y ventas.</p>
+                    </div>
+                </div>
+                <button class="mt-10 bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-bold transition">
+                    Convertirme en Afiliado MultiEx
+                </button>
+            </div>
+            <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                <div class="bg-slate-800 p-6 rounded-2xl text-center">
+                    <div class="text-3xl font-bold text-blue-400">+10k</div>
+                    <div class="text-xs text-slate-400 uppercase mt-1">Alumnos</div>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-2xl text-center">
+                    <div class="text-3xl font-bold text-blue-400">+50</div>
+                    <div class="text-xs text-slate-400 uppercase mt-1">Cursos</div>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-2xl text-center">
+                    <div class="text-3xl font-bold text-blue-400">98%</div>
+                    <div class="text-xs text-slate-400 uppercase mt-1">Satisfacción</div>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-2xl text-center">
+                    <div class="text-3xl font-bold text-blue-400">24/7</div>
+                    <div class="text-xs text-slate-400 uppercase mt-1">Soporte</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 text-center border-t border-slate-200">
+        <div class="text-xl font-bold text-slate-400 mb-4">Multi<span class="text-slate-300">Ex</span></div>
+        <p class="text-slate-400 text-sm italic">Hacia la cima del conocimiento.</p>
+    </footer>
+
+</body>
+</html>
