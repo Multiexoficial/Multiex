@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>AdFunZone — Gana monedas, diviértete, yo gano dinero real 💰</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- ===================================================== -->
+  <!-- CÓDIGO GLOBAL DE GOOGLE ADSENSE (proporcionado por ti) -->
+  <!-- ===================================================== -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1454646397375388"
+       crossorigin="anonymous"></script>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at 10% 30%, #0a0f1e, #03050b);
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .bg-glow {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.05) 0%, transparent 70%);
+      animation: pulseBg 8s infinite alternate;
+    }
+
+    @keyframes pulseBg {
+      0% { opacity: 0.3; transform: scale(1);}
+      100% { opacity: 0.8; transform: scale(1.2);}
+    }
+
+    .app-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .glass-panel {
+      background: rgba(15, 25, 45, 0.65);
+      backdrop-filter: blur(12px);
+      border-radius: 2rem;
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding: 1.2rem 1.8rem;
+    }
+
+    .stat-card {
+      flex: 1;
+      background: rgba(0,0,0,0.5);
+      border-radius: 1.5rem;
+      padding: 1rem 1.2rem;
+      text-align: center;
+      transition: transform 0.2s ease;
+      border-left: 3px solid #0ff;
+    }
+
+    .stat-card i {
+      font-size: 2rem;
+      color: #0ff;
+      text-shadow: 0 0 5px #0ff;
+    }
+
+    .stat-card h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #9bb5ff;
+      margin-top: 8px;
+    }
+
+    .stat-value {
+      font-size: 1.9rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff, #0ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 1.8rem;
+    }
+
+    @media (max-width: 900px) {
+      .two-columns {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .stats-grid {
+        flex-direction: column;
+      }
+    }
+
+    .ad-card {
+      background: rgba(10, 20, 35, 0.7);
+      backdrop-filter: blur(8px);
+      border-radius: 1.8rem;
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s;
+      border: 1px solid rgba(0, 255, 255, 0.2);
+      cursor: pointer;
+    }
+
+    .ad-card:hover {
+      transform: translateY(-5px);
+      border-color: #0ff;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+
+    .ad-badge {
+      display: inline-block;
+      background: #ff3860;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .ad-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .reward-chip {
+      background: rgba(0,255,200,0.2);
+      padding: 6px 12px;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-watch {
+      background: linear-gradient(95deg, #0f6eff, #00ccff);
+      border: none;
+      padding: 12px 18px;
+      border-radius: 50px;
+      font-weight: bold;
+      color: white;
+      width: 100%;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-watch:hover {
+      transform: scale(0.97);
+      box-shadow: 0 0 15px cyan;
+    }
+
+    .shop-item, .leaderboard-entry {
+      background: rgba(0,0,0,0.4);
+      margin: 12px 0;
+      padding: 12px;
+      border-radius: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 3px solid gold;
+    }
+
+    .btn-buy {
+      background: #ffb347;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .toast-msg {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0f212e;
+      backdrop-filter: blur(16px);
+      color: #0ff;
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-weight: bold;
+      z-index: 2000;
+      box-shadow: 0 0 20px rgba(0,255,255,0.5);
+      transition: all 0.3s;
+      pointer-events: none;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.2s;
+    }
+
+    .modal-content {
+      background: #0a1428;
+      max-width: 400px;
+      width: 90%;
+      border-radius: 2rem;
+      padding: 1.8rem;
+      text-align: center;
+      border: 2px solid cyan;
+      box-shadow: 0 0 50px cyan;
+    }
+
+    .countdown-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #0ff;
+    }
+
+    button:active { transform: scale(0.96); }
+
+    .confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1001;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #fff, #0ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .ad-banner-container {
+      margin: 1.5rem 0;
+      text-align: center;
+      background: rgba(0,0,0,0.3);
+      border-radius: 1rem;
+      padding: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="app-container">
+  <!-- Panel de estadísticas -->
+  <div class="glass-panel stats-grid">
+    <div class="stat-card"><i class="fas fa-coins"></i><div class="stat-value" id="userCoinsDisplay">0</div><h3>TUS MONEDAS 🎮</h3></div>
+    <div class="stat-card"><i class="fas fa-eye"></i><div class="stat-value" id="adsWatchedCount">0</div><h3>ANUNCIOS VISTOS</h3></div>
+    <div class="stat-card"><i class="fas fa-chart-line"></i><div class="stat-value" id="ownerRevenueDisplay">$0.00</div><h3>💰 GANANCIA DEL DUEÑO (real)</h3></div>
+    <div class="stat-card"><i class="fas fa-gamepad"></i><div class="stat-value" id="userLevel">1</div><h3>NIVEL DIVERTIDO</h3></div>
+  </div>
+
+  <!-- ===================================================== -->
+  <!-- EJEMPLO DE BANNER DE ADSENSE (UNIDAD DE ANUNCIO)      -->
+  <!-- Debes reemplazar data-ad-slot con el tuyo propio      -->
+  <!-- ===================================================== -->
+  <div class="ad-banner-container glass-panel" style="padding: 0.5rem;">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-1454646397375388"
+         data-ad-slot="XXXXXXXXXX"   <!-- 🔴 REEMPLAZA ESTE NÚMERO con el que te dé AdSense -->
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <p style="font-size: 10px; margin-top: 5px; opacity: 0.6;">Anuncio - Ayuda a mantener la plataforma</p>
+  </div>
+
+  <!-- 2 COLUMNAS: ANUNCIOS (simulados) + TIENDA/RANKING -->
+  <div class="two-columns">
+    <!-- ZONA DE ANUNCIOS SIMULADOS (donde los usuarios ganan monedas) -->
+    <div>
+      <div class="glass-panel" style="padding: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <h2><i class="fas fa-ad"></i> Anuncios explosivos</h2>
+          <span class="reward-chip"><i class="fas fa-dragon"></i> ¡Cada ad = +10-15 monedas!</span>
+        </div>
+        <div id="adsListContainer">
+          <!-- Los anuncios se generan dinámicamente con JS -->
+        </div>
+        <div style="margin-top: 10px; font-size: 12px; text-align: center; opacity: 0.7;">🌟 Ver anuncios = tú ganas diversión + monedas, el dueño gana dinero real por cada visualización 🌟</div>
+      </div>
+    </div>
+
+    <!-- COLUMNA DERECHA: TIENDA Y TOP USUARIOS -->
+    <div>
+      <div class="glass-panel" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2><i class="fas fa-store"></i> Tienda de diversión</h2>
+        <div id="shopList"></div>
+        <div style="margin-top: 15px; font-size: 12px; text-align: center;">✨ Gasta tus monedas en efectos épicos ✨</div>
+      </div>
+      <div class="glass-panel" style="padding: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h2><i class="fas fa-trophy"></i> Ranking TOP</h2>
+          <button id="editNameBtn" style="background: none; border: none; color: cyan; font-size: 1.2rem;"><i class="fas fa-user-edit"></i></button>
+        </div>
+        <div id="leaderboardList" style="max-height: 320px; overflow-y: auto;"></div>
+        <div style="margin-top: 10px; font-size: 11px; text-align: center;">¡Sube viendo anuncios y sé el rey de la diversión!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL SIMULACIÓN DE ANUNCIO (reemplazable por rewarded de AdMob) -->
+<div id="adModal" class="modal-overlay">
+  <div class="modal-content">
+    <i class="fas fa-video" style="font-size: 3rem; color: cyan;"></i>
+    <h3 id="modalAdName">Anuncio Premium</h3>
+    <p id="modalAdDesc">Mira este increíble anuncio y recibe tu recompensa 🎁</p>
+    <div id="countdownTimer" class="countdown-number">3</div>
+    <progress id="adProgress" value="0" max="3" style="width: 100%; height: 8px; border-radius: 10px;"></progress>
+    <button id="claimRewardBtn" style="margin-top: 20px; background: #0f0; border: none; padding: 10px 20px; border-radius: 60px; font-weight: bold; display: none;">¡RECLAMAR RECOMPENSA!</button>
+    <p style="font-size: 12px; margin-top: 12px;">💸 El dueño recibe $0.02 por este anuncio (real). Tú recibes monedas para divertirte.</p>
+  </div>
+</div>
+
+<script>
+  // ---------- CONFIGURACIÓN GLOBAL ----------
+  let userData = {
+    coins: 0,
+    totalAdsWatched: 0,
+    ownerRevenue: 0.0,
+    username: "Aventurero"
+  };
+  const AD_REVENUE_PER_VIEW = 0.02;   // dueño gana dinero real (simulado, pero será real con AdSense)
+  const BASE_COINS_RANDOM = [10, 11, 12, 13, 14, 15];
+  
+  // Leaderboard global (simula otros jugadores) + usuario actual
+  let globalLeaderboard = [
+    { name: "⭐ AdMaster", coins: 2450 },
+    { name: "🔥 VisionRey", coins: 1870 },
+    { name: "🎮 GamerPro", coins: 1230 },
+    { name: "✨ CoinDiva", coins: 980 },
+    { name: "🐉 DragónAds", coins: 540 }
+  ];
+
+  // Tienda de diversión (objetos virtuales)
+  const shopItems = [
+    { id: "firework", name: "🎆 Lluvia de confeti", cost: 50, desc: "¡Explosión de colores!" },
+    { id: "glowName", name: "✨ Título Luminoso", cost: 120, desc: "Aparece en el ranking con glow" },
+    { id: "dance", name: "💃 Baile épico", cost: 80, desc: "Animación divertida" },
+    { id: "megaCoin", name: "🪙 Mega Moneda (efecto visual)", cost: 200, desc: "Brillo dorado legendario" }
+  ];
+
+  // Lista de anuncios simulados (los que el usuario "ve" para ganar monedas)
+  const adsCatalog = [
+    { name: "⚡ GAME RAID: Shadow Legends", description: "El RPG más épico te espera", icon: "fa-gamepad" },
+    { name: "🛍️ OFERTA FASHION WEEK", description: "Hasta 70% descuento - Mira el anuncio", icon: "fa-tags" },
+    { name: "🍕 PIZZA MANIA", description: "Envío gratis, publicidad local", icon: "fa-pizza-slice" },
+    { name: "🚀 CRIPTOXCHANGE", description: "Invierte en el futuro, mira este anuncio", icon: "fa-chart-line" }
+  ];
+
+  // Helper: cargar desde localStorage
+  function loadData() {
+    const saved = localStorage.getItem("adfun_user");
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        userData.coins = parsed.coins || 0;
+        userData.totalAdsWatched = parsed.totalAdsWatched || 0;
+        userData.ownerRevenue = parsed.ownerRevenue || 0;
+        userData.username = parsed.username || "Aventurero";
+      } catch(e) {}
+    }
+    const storedLeader = localStorage.getItem("adfun_leaderboard");
+    if (storedLeader) {
+      try {
+        const lb = JSON.parse(storedLeader);
+        if (Array.isArray(lb) && lb.length) globalLeaderboard = lb;
+      } catch(e) {}
+    }
+    updateUserInLeaderboard();
+  }
+
+  function saveData() {
+    localStorage.setItem("adfun_user", JSON.stringify({
+      coins: userData.coins,
+      totalAdsWatched: userData.totalAdsWatched,
+      ownerRevenue: userData.ownerRevenue,
+      username: userData.username
+    }));
+    localStorage.setItem("adfun_leaderboard", JSON.stringify(globalLeaderboard));
+  }
+
+  function updateUserInLeaderboard() {
+    const existingIdx = globalLeaderboard.findIndex(entry => entry.name === userData.username);
+    if (existingIdx !== -1) {
+      globalLeaderboard[existingIdx].coins = userData.coins;
+    } else {
+      globalLeaderboard.push({ name: userData.username, coins: userData.coins });
+    }
+    globalLeaderboard.sort((a,b) => b.coins - a.coins);
+    if (globalLeaderboard.length > 8) globalLeaderboard = globalLeaderboard.slice(0,8);
+    saveData();
+    renderLeaderboard();
+  }
+
+  function renderLeaderboard() {
+    const container = document.getElementById("leaderboardList");
+    if (!container) return;
+    container.innerHTML = "";
+    globalLeaderboard.slice(0,6).forEach(entry => {
+      const isCurrent = entry.name === userData.username;
+      const div = document.createElement("div");
+      div.className = "leaderboard-entry";
+      div.style.borderLeftColor = isCurrent ? "#0ff" : "gold";
+      div.innerHTML = `
+        <span><strong>${entry.name}</strong> ${isCurrent ? '(tú)' : ''}</span>
+        <span><i class="fas fa-coins"></i> ${entry.coins.toLocaleString()}</span>
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  function refreshUI() {
+    document.getElementById("userCoinsDisplay").innerText = Math.floor(userData.coins);
+    document.getElementById("adsWatchedCount").innerText = userData.totalAdsWatched;
+    document.getElementById("ownerRevenueDisplay").innerText = `$${userData.ownerRevenue.toFixed(2)}`;
+    let level = Math.floor(userData.totalAdsWatched / 5) + 1;
+    if (level < 1) level = 1;
+    document.getElementById("userLevel").innerText = level;
+    updateUserInLeaderboard();
+  }
+
+  function triggerConfetti() {
+    const canvas = document.createElement("canvas");
+    canvas.className = "confetti-canvas";
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    let particles = [];
+    for(let i=0;i<100;i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height - canvas.height,
+        size: Math.random() * 6 + 2,
+        color: `hsl(${Math.random() * 360}, 80%, 60%)`,
+        speedY: Math.random() * 5 + 3,
+        speedX: (Math.random() - 0.5) * 2
+      });
+    }
+    let anim = true;
+    function draw() {
+      if(!anim) return;
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      let anyAlive = false;
+      for(let p of particles) {
+        p.y += p.speedY;
+        p.x += p.speedX;
+        if(p.y < canvas.height + 50) anyAlive = true;
+        ctx.fillStyle = p.color;
+        ctx.fillRect(p.x, p.y, p.size, p.size);
+      }
+      if(anyAlive) requestAnimationFrame(draw);
+      else {
+        canvas.remove();
+        anim = false;
+      }
+    }
+    draw();
+    setTimeout(() => { if(anim) { anim=false; canvas.remove(); } }, 2500);
+  }
+
+  function showToast(msg, isError = false) {
+    let toastDiv = document.querySelector(".toast-msg");
+    if(toastDiv) toastDiv.remove();
+    const toast = document.createElement("div");
+    toast.className = "toast-msg";
+    toast.innerHTML = `<i class="fas ${isError ? 'fa-exclamation-triangle' : 'fa-face-grin-tongue-squint'}"></i> ${msg}`;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 2500);
+  }
+
+  // Modal de simulación de anuncio (reemplazable por rewarded video de AdMob)
+  let countdownInterval = null;
+  const modal = document.getElementById("adModal");
+  const countdownEl = document.getElementById("countdownTimer");
+  const progressBar = document.getElementById("adProgress");
+  const claimBtn = document.getElementById("claimRewardBtn");
+
+  function closeModal() {
+    if(countdownInterval) clearInterval(countdownInterval);
+    modal.style.visibility = "hidden";
+    modal.style.opacity = "0";
+    claimBtn.style.display = "none";
+  }
+
+  function showAdModal(adName, rewardCoins, onComplete) {
+    if (modal.style.visibility === "visible") return;
+    document.getElementById("modalAdName").innerHTML = `<i class="fas fa-ad"></i> ${adName}`;
+    document.getElementById("modalAdDesc").innerHTML = "⏳ Mira el anuncio hasta el final... ¡Ganarás recompensa!";
+    countdownEl.innerText = "3";
+    progressBar.value = 0;
+    claimBtn.style.display = "none";
+    modal.style.visibility = "visible";
+    modal.style.opacity = "1";
+    let timer = 3;
+    if(countdownInterval) clearInterval(countdownInterval);
+    countdownInterval = setInterval(() => {
+      timer--;
+      countdownEl.innerText = timer;
+      progressBar.value = 3 - timer;
+      if(timer <= 0) {
+        clearInterval(countdownInterval);
+        countdownEl.innerText = "✅";
+        claimBtn.style.display = "block";
+        claimBtn.onclick = () => {
+          closeModal();
+          if(onComplete) onComplete(rewardCoins);
+        };
+      }
+    }, 1000);
+  }
+
+  function watchAd(adObj) {
+    let earnedCoins = BASE_COINS_RANDOM[Math.floor(Math.random() * BASE_COINS_RANDOM.length)];
+    showAdModal(adObj.name, earnedCoins, (finalCoins) => {
+      userData.coins += finalCoins;
+      userData.totalAdsWatched += 1;
+      userData.ownerRevenue += AD_REVENUE_PER_VIEW;
+      refreshUI();
+      saveData();
+      showToast(`🎉 +${finalCoins} monedas por ver "${adObj.name}"! El dueño ganó $${AD_REVENUE_PER_VIEW.toFixed(2)}`, false);
+      if(userData.totalAdsWatched % 5 === 0) {
+        triggerConfetti();
+        showToast("🌈 ¡RACHA ÉPICA! +20 monedas extra", false);
+        userData.coins += 20;
+        refreshUI();
+        saveData();
+      }
+      refreshUI();
+    });
+  }
+
+  function renderAds() {
+    const container = document.getElementById("adsListContainer");
+    if(!container) return;
+    container.innerHTML = "";
+    adsCatalog.forEach((ad, idx) => {
+      const card = document.createElement("div");
+      card.className = "ad-card";
+      card.innerHTML = `
+        <div class="ad-badge"><i class="fas fa-dollar-sign"></i> Anuncio con costo para anunciante</div>
+        <div class="ad-title">
+          <i class="fas ${ad.icon || 'fa-tv'}" style="color:#0ff"></i> ${ad.name}
+        </div>
+        <p style="margin: 10px 0;">${ad.description}</p>
+        <div class="reward-chip"><i class="fas fa-coins"></i> +10-15 monedas + diversión</div>
+        <button class="btn-watch" data-adidx="${idx}"><i class="fas fa-play-circle"></i> Ver anuncio ahora</button>
+      `;
+      container.appendChild(card);
+    });
+    document.querySelectorAll(".btn-watch").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const idx = btn.getAttribute("data-adidx");
+        if(idx !== null) watchAd(adsCatalog[parseInt(idx)]);
+      });
+    });
+  }
+
+  function renderShop() {
+    const shopDiv = document.getElementById("shopList");
+    if(!shopDiv) return;
+    shopDiv.innerHTML = "";
+    shopItems.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "shop-item";
+      div.innerHTML = `
+        <div><strong>${item.name}</strong><br><small>${item.desc}</small><br><span style="color:gold">💰 ${item.cost} monedas</span></div>
+        <button class="btn-buy" data-item="${item.id}" data-cost="${item.cost}">Comprar 🎁</button>
+      `;
+      shopDiv.appendChild(div);
+    });
+    document.querySelectorAll(".btn-buy").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const cost = parseInt(btn.getAttribute("data-cost"));
+        const itemId = btn.getAttribute("data-item");
+        if(userData.coins >= cost) {
+          userData.coins -= cost;
+          refreshUI();
+          saveData();
+          if(itemId === "firework") {
+            triggerConfetti();
+            showToast("🎇 ¡Fuegos artificiales de diversión! 🎇", false);
+          } else if(itemId === "glowName") {
+            showToast("✨ ¡Ahora tu nombre brilla en el ranking! ✨", false);
+          } else if(itemId === "dance") {
+            showToast("💃 ¡Baile épico desbloqueado! todos se divierten 💃", false);
+            triggerConfetti();
+          } else if(itemId === "megaCoin") {
+            showToast("🪙 ¡Brillo legendario! +15 monedas de regalo", false);
+            userData.coins += 15;
+            refreshUI();
+            saveData();
+            triggerConfetti();
+          }
+        } else {
+          showToast("❌ ¡Necesitas más monedas! Mira más anuncios y diviértete ❌", true);
+        }
+      });
+    });
+  }
+
+  function setupNameEditor() {
+    const editBtn = document.getElementById("editNameBtn");
+    editBtn.addEventListener("click", () => {
+      let newName = prompt("¡Personaliza tu nombre para el ranking!", userData.username);
+      if(newName && newName.trim().length > 0 && newName.trim().length < 20) {
+        const oldName = userData.username;
+        userData.username = newName.trim();
+        const idxOld = globalLeaderboard.findIndex(e => e.name === oldName);
+        if(idxOld !== -1) globalLeaderboard.splice(idxOld,1);
+        updateUserInLeaderboard();
+        refreshUI();
+        saveData();
+        showToast(`¡Bienvenido ${userData.username}! a seguir divirtiéndose 🎉`, false);
+      } else if(newName) showToast("Nombre muy largo o inválido", true);
+    });
+  }
+
+  function init() {
+    loadData();
+    renderAds();
+    renderShop();
+    refreshUI();
+    renderLeaderboard();
+    setupNameEditor();
+    modal.addEventListener("click", (e) => {
+      if(e.target === modal) closeModal();
+    });
+    showToast("🔥 ¡Mira anuncios, gana monedas, diviértete! (Dueño gana dinero real)", false);
+  }
+
+  init();
+</script>
+</body>
+</html>
