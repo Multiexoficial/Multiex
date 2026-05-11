@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>video feed automático</title>
+    <style>
+        :root {
+            --neon-blue: #00f2ff;
+            --bg-dark: #0a0b10;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #e0e0e0;
+            font-family: 'courier new', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+            text-transform: lowercase;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .video-card {
+            width: 100%;
+            border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* alinea todo a la izquierda */
+        }
+
+        /* miniatura pequeña y ajustada */
+        .thumb-box {
+            width: 280px; /* tamaño de la miniatura pequeña */
+            height: 160px; /* altura fija para mantener orden */
+            background: #000;
+            border: 1px solid var(--neon-blue);
+            box-shadow: 0 0 10px rgba(0, 242, 255, 0.1);
+            overflow: hidden;
+            display: block;
+        }
+
+        .thumb-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* ajusta la imagen al cuadro pequeño */
+            display: block;
+            transition: 0.3s;
+        }
+
+        .thumb-box:hover img {
+            filter: brightness(1.2);
+        }
+
+        .info {
+            margin-top: 15px;
+        }
+
+        h2 {
+            color: var(--neon-blue);
+            font-size: 0.9rem;
+            margin: 0 0 5px 0;
+        }
+
+        p {
+            font-size: 0.8rem;
+            color: #888;
+            margin: 0 0 10px 0;
+        }
+
+        a {
+            color: #bc13fe;
+            text-decoration: none;
+            font-size: 0.75rem;
+            border: 1px solid #bc13fe;
+            padding: 4px 12px;
+            display: inline-block;
+        }
+
+        a:hover {
+            background: #bc13fe;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- video 1 -->
+        <div class="video-card">
+            <a href="vi1.mp4" target="_blank" class="thumb-box">
+                <img src="imagen1.jpg" alt="miniatura 1">
+            </a>
+            <div class="info">
+                <h2>archivo: vi1.mp4</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
+                <a href="vi1.mp4" target="_blank">descargar</a>
+            </div>
+        </div>
+
+        <!-- video 2 -->
+        <div class="video-card">
+            <a href="vi2.mp4" target="_blank" class="thumb-box">
+                <img src="imagen2.jpg" alt="miniatura 2">
+            </a>
+            <div class="info">
+                <h2>archivo: vi2.mp4</h2>
+                <p>enlace secundario activo.</p>
+                <a href="vi2.mp4" target="_blank">descargar</a>
+            </div>
+        </div>
+
+        <!-- video 3 -->
+        <div class="video-card">
+            <a href="vi3.mp4" target="_blank" class="thumb-box">
+                <img src="imagen3.jpg" alt="miniatura 3">
+            </a>
+            <div class="info">
+                <h2>archivo: vi3.mp4</h2>
+                <p>sincronización de red completa.</p>
+                <a href="vi3.mp4" target="_blank">descargar</a>
+            </div>
+        </div>
+
+        <!-- video 4 -->
+        <div class="video-card">
+            <a href="vi4.mp4" target="_blank" class="thumb-box">
+                <img src="imagen4.jpg" alt="miniatura 4">
+            </a>
+            <div class="info">
+                <h2>archivo: vi4.mp4</h2>
+                <p>fin de registro automático.</p>
+                <a href="vi4.mp4" target="_blank">descargar</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
