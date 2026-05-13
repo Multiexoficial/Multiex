@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>video feed automático</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multiex</title>
     <style>
         :root {
             --neon-blue: #00f2ff;
@@ -23,25 +24,26 @@
 
         .container {
             width: 100%;
-            max-width: 800px;
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            justify-items: center;
+            padding: 20px 0;
         }
 
         .video-card {
-            width: 100%;
+            width: 280px;
             border-bottom: 1px solid rgba(0, 242, 255, 0.2);
             padding-bottom: 20px;
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* alinea todo a la izquierda */
+            align-items: flex-start;
         }
 
-        /* miniatura pequeña y ajustada */
         .thumb-box {
-            width: 280px; /* tamaño de la miniatura pequeña */
-            height: 160px; /* altura fija para mantener orden */
+            width: 280px; 
+            height: 160px; 
             background: #000;
             border: 1px solid var(--neon-blue);
             box-shadow: 0 0 10px rgba(0, 242, 255, 0.1);
@@ -52,7 +54,7 @@
         .thumb-box img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* ajusta la imagen al cuadro pequeño */
+            object-fit: cover; 
             display: block;
             transition: 0.3s;
         }
@@ -63,32 +65,20 @@
 
         .info {
             margin-top: 15px;
+            width: 100%;
         }
 
         h2 {
             color: var(--neon-blue);
             font-size: 0.9rem;
             margin: 0 0 5px 0;
+            word-break: break-all;
         }
 
         p {
             font-size: 0.8rem;
             color: #888;
-            margin: 0 0 10px 0;
-        }
-
-        a {
-            color: #bc13fe;
-            text-decoration: none;
-            font-size: 0.75rem;
-            border: 1px solid #bc13fe;
-            padding: 4px 12px;
-            display: inline-block;
-        }
-
-        a:hover {
-            background: #bc13fe;
-            color: #fff;
+            margin: 10px 0 0 0;
         }
     </style>
 </head>
@@ -99,12 +89,12 @@
         <!-- video 1 -->
         <div class="video-card">
             <a href="vi1.mp4" target="_blank" class="thumb-box">
-                <img src="imagen1.jpg" alt="miniatura 1">
+                <img src="imagen1.jpeg" alt="miniatura 1">
             </a>
             <div class="info">
-                <h2>archivo: vi1.mp4</h2>
+                <h2>2 bhregh - light rise</h2>
+                <h2>music multiex</h2>
                 <p>clic en miniatura para abrir video en otra pestaña.</p>
-                <a href="vi1.mp4" target="_blank">descargar</a>
             </div>
         </div>
 
@@ -114,9 +104,9 @@
                 <img src="imagen2.jpg" alt="miniatura 2">
             </a>
             <div class="info">
-                <h2>archivo: vi2.mp4</h2>
-                <p>enlace secundario activo.</p>
-                <a href="vi2.mp4" target="_blank">descargar</a>
+                <h2>1 bhregh - light rise</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
             </div>
         </div>
 
@@ -126,9 +116,9 @@
                 <img src="imagen3.jpg" alt="miniatura 3">
             </a>
             <div class="info">
-                <h2>archivo: vi3.mp4</h2>
-                <p>sincronización de red completa.</p>
-                <a href="vi3.mp4" target="_blank">descargar</a>
+                <h2>3 neon drift - night drive</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
             </div>
         </div>
 
@@ -138,9 +128,201 @@
                 <img src="imagen4.jpg" alt="miniatura 4">
             </a>
             <div class="info">
-                <h2>archivo: vi4.mp4</h2>
-                <p>fin de registro automático.</p>
-                <a href="vi4.mp4" target="_blank">descargar</a>
+                <h2>4 static buzz - white noise</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
+            </div>
+        </div>
+
+        <!-- video 5 -->
+        <div class="video-card">
+            <a href="vi5.mp4" target="_blank" class="thumb-box">
+                <img src="imagen5.jpg" alt="miniatura 5">
+            </a>
+            <div class="info">
+                <h2>5 data stream - fiber optic</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
+            </div>
+        </div>
+
+        <!-- video 6 -->
+        <div class="video-card">
+            <a href="vi6.mp4" target="_blank" class="thumb-box">
+                <img src="imagen6.jpeg" alt="miniatura 6">
+            </a>
+            <div class="info">
+                <h2>6 micro chips - binary code</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
+            </div>
+        </div>
+
+        <!-- video 7 -->
+        <div class="video-card">
+            <a href="vi7.mp4" target="_blank" class="thumb-box">
+                <img src="imagen7.jpeg" alt="miniatura 7">
+            </a>
+            <div class="info">
+                <h2>7 laser beam - photon blast</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
+            </div>
+        </div>
+
+        <!-- video 8 -->
+        <div class="video-card">
+            <a href="vi8.mp4" target="_blank" class="thumb-box">
+                <img src="imagen8.jpeg" alt="miniatura 8">
+            </a>
+            <div class="info">
+                <h2>8 echo room - reverb scale</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
+            </div>
+        </div>
+
+        <!-- video 9 -->
+        <div class="video-card">
+            <a href="vi9.mp4" target="_blank" class="thumb-box">
+                <img src="imagen9.jpeg" alt="miniatura 9">
+            </a>
+            <div class="info">
+                <h2>9 cloud sync - server link</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
+            </div>
+        </div>
+
+        <!-- video 10 -->
+        <div class="video-card">
+            <a href="vi10.mp4" target="_blank" class="thumb-box">
+                <img src="imagen10.jpeg" alt="miniatura 10">
+            </a>
+            <div class="info">
+                <h2>10 core dump - fatal error</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
+            </div>
+        </div>
+
+        <!-- video 11 -->
+        <div class="video-card">
+            <a href="vi11.mp4" target="_blank" class="thumb-box">
+                <img src="imagen11.jpeg" alt="miniatura 11">
+            </a>
+            <div class="info">
+                <h2>11 grid node - active terminal</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
+            </div>
+        </div>
+
+        <!-- video 12 -->
+        <div class="video-card">
+            <a href="vi12.mp4" target="_blank" class="thumb-box">
+                <img src="imagen12.jpeg" alt="miniatura 12">
+            </a>
+            <div class="info">
+                <h2>12 deep sub - bass response</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
+            </div>
+        </div>
+
+        <!-- video 13 -->
+        <div class="video-card">
+            <a href="vi13.mp4" target="_blank" class="thumb-box">
+                <img src="imagen13.jpeg" alt="miniatura 13">
+            </a>
+            <div class="info">
+                <h2>13 phase shift - audio track</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
+            </div>
+        </div>
+
+        <!-- video 14 -->
+        <div class="video-card">
+            <a href="vi14.mp4" target="_blank" class="thumb-box">
+                <img src="imagen14.jpeg" alt="miniatura 14">
+            </a>
+            <div class="info">
+                <h2>14 bit rate - ultra high</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
+            </div>
+        </div>
+
+        <!-- video 15 -->
+        <div class="video-card">
+            <a href="vi15.mp4" target="_blank" class="thumb-box">
+                <img src="imagen15.jpeg" alt="miniatura 15">
+            </a>
+            <div class="info">
+                <h2>15 analog tape - hiss filter</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
+            </div>
+        </div>
+
+        <!-- video 16 -->
+        <div class="video-card">
+            <a href="vi16.mp4" target="_blank" class="thumb-box">
+                <img src="imagen16.jpeg" alt="miniatura 16">
+            </a>
+            <div class="info">
+                <h2>16 proxy run - secure path</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
+            </div>
+        </div>
+
+        <!-- video 17 -->
+        <div class="video-card">
+            <a href="vi17.mp4" target="_blank" class="thumb-box">
+                <img src="imagen17.jpeg" alt="miniatura 17">
+            </a>
+            <div class="info">
+                <h2>17 flux gate - energy loop</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
+            </div>
+        </div>
+
+        <!-- video 18 -->
+        <div class="video-card">
+            <a href="vi18.mp4" target="_blank" class="thumb-box">
+                <img src="imagen18.jpeg" alt="miniatura 18">
+            </a>
+            <div class="info">
+                <h2>18 patch cord - modular rack</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
+            </div>
+        </div>
+
+        <!-- video 19 -->
+        <div class="video-card">
+            <a href="vi19.mp4" target="_blank" class="thumb-box">
+                <img src="imagen19.jpeg" alt="miniatura 19">
+            </a>
+            <div class="info">
+                <h2>19 dark room - safe light</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
+            </div>
+        </div>
+
+        <!-- video 20 -->
+        <div class="video-card">
+            <a href="vi20.mp4" target="_blank" class="thumb-box">
+                <img src="imagen20.jpeg" alt="miniatura 20">
+            </a>
+            <div class="info">
+                <h2>20 terminal - prompt exit</h2>
+                <h2>music multiex</h2>
+                <p>clic en miniatura para abrir video en otra pestaña.</p>
             </div>
         </div>
 
